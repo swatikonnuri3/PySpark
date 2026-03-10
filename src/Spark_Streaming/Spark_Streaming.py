@@ -1,5 +1,7 @@
-df.createOrReplaceTempView("students")
+from pyspark.sql import SparkSession
 
-result = spark.sql("SELECT * FROM students WHERE Age > 22")
+spark = SparkSession.builder.appName("StreamingExample").getOrCreate()
 
-result.show()
+df = spark.readStream.format("socket").option("host","localhost").option("port",9999).load()
+
+df.writeStream.outputMode("append").format("console").start().awaitTermination()
