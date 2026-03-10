@@ -5,3 +5,5 @@ spark = SparkSession.builder \
     .config("spark.executor.memory","1g") \
     .config("spark.driver.memory","1g") \
     .getOrCreate()
+#spark.executor.memory	memory for executors
+#spark.driver.memory	memory for driver
