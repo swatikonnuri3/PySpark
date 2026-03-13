@@ -8,7 +8,6 @@ schema = StructType([
     StructField("name", StringType(), True),
     StructField("age", IntegerType(), True)
 ])
-
 df = spark.read \
     .option("header", True) \
     .schema(schema) \
