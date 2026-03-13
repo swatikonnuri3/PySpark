@@ -30,7 +30,7 @@ df.coalesce(1).write.mode("overwrite").option("header", True).csv(f"{base_path}/
 df.coalesce(1).write.mode("overwrite").json(f"{base_path}/students_json")
 df.coalesce(1).write.mode("overwrite").parquet(f"{base_path}/students_parquet")
 
-print("✅ Write complete!")
+print("Write complete!")
 
 # ── READ BACK ──────────────────────────────────────────
 print("\n--- CSV ---")
